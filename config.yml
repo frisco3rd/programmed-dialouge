@@ -1,0 +1,16 @@
+backend:
+  name: github
+  repo: your-username/your-repo-name
+
+media_folder: static/uploads
+public_folder: /uploads
+
+collections:
+  - name: 'blog' # This is the name of the collection
+    label: 'Blog' # This is the label displayed in the CMS
+    folder: 'content/blog' # The directory where the content for this collection is stored
+    create: true # Allow creating new entries
+    slug: '{{year}}-{{month}}-{{day}}-{{slug}}' # Define the URL structure for blog posts
+    fields: # Define the fields for the blog post content type
+      - { name: 'title', label: 'Title', widget: 'string' }
+      - { name: 'body', label: 'Body', widget: 'markdown' }
